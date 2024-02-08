@@ -30,7 +30,8 @@ function getRandomNumber() {
 function playGame(playerSelection, computerSelection) {
     playerSelection = formatSelection(playerSelection); 
     computerSelection = getComputerChoice();
-    
+    pickWinner(playerSelection, computerSelection);
+    console.log(message);
 }
 
 //formatSelection makes a selection case-insensitive so the returned string will always only have the first letter capitalized
@@ -44,8 +45,7 @@ function formatSelection(selection) {
 }
 
 //pickWinner determines who the winner is, or if it's a tie, and returns the appropriate message
-function pickWinner() {
-    playerSelection = formatSelection(playerSelection);
+function pickWinner(playerSelection, computerSelection) {
     switch(true) {
         case playerSelection === computerSelection:
             message = "It's a tie!";
